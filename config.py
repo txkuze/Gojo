@@ -7,9 +7,9 @@ from pyrogram import filters
 load_dotenv()
 
 
-API_ID = int(getenv("API_ID", "35279715"))
+API_ID = int(getenv("API_ID", "23450648"))
 
-API_HASH = getenv("API_HASH", "b4c339216397b5941d88c8617d2dc12b")
+API_HASH = getenv("API_HASH", "177973c53d36a5db484cabfce1b9bf2f)
 
 BOT_TOKEN = getenv("BOT_TOKEN", "")
 
@@ -86,21 +86,21 @@ clean = {}
 autoclean = []
 
 START_IMG_URL = getenv(
-    "START_IMG_URL", "https://files.catbox.moe/k8ix72.jpg"
+    "START_IMG_URL", "https://files.catbox.moe/l5y0q6.jpg"
 )
 PING_IMG_URL = getenv(
-    "PING_IMG_URL", "https://files.catbox.moe/k8ix72.jpg"
+    "PING_IMG_URL", "https://files.catbox.moe/l5y0q6.jpg"
 )
-PLAYLIST_IMG_URL = "https://files.catbox.moe/k8ix72.jpg"
-STATS_IMG_URL = "https://files.catbox.moe/k8ix72.jpg"
-TELEGRAM_AUDIO_URL = "https://files.catbox.moe/k8ix72.jpg"
-TELEGRAM_VIDEO_URL = "https://files.catbox.moe/k8ix72.jpg"
-STREAM_IMG_URL = "https://files.catbox.moe/k8ix72.jpg"
-SOUNCLOUD_IMG_URL = "https://files.catbox.moe/k8ix72.jpg"
-YOUTUBE_IMG_URL = "https://files.catbox.moe/k8ix72.jpg"
-SPOTIFY_ARTIST_IMG_URL = "https://files.catbox.moe/k8ix72.jpg"
-SPOTIFY_ALBUM_IMG_URL = "https://files.catbox.moe/k8ix72.jpg"
-SPOTIFY_PLAYLIST_IMG_URL = "https://files.catbox.moe/k8ix72.jpg"
+PLAYLIST_IMG_URL = "https://files.catbox.moe/l5y0q6.jpg"
+STATS_IMG_URL = "https://files.catbox.moe/l5y0q6.jpg"
+TELEGRAM_AUDIO_URL = "https://files.catbox.moe/l5y0q6.jpg"
+TELEGRAM_VIDEO_URL = "https://files.catbox.moe/l5y0q6.jpg"
+STREAM_IMG_URL = "https://files.catbox.moe/l5y0q6.jpg"
+SOUNCLOUD_IMG_URL = "https://files.catbox.moe/l5y0q6.jpg"
+YOUTUBE_IMG_URL = "https://files.catbox.moe/l5y0q6.jpg"
+SPOTIFY_ARTIST_IMG_URL = "https://files.catbox.moe/l5y0q6.jpg"
+SPOTIFY_ALBUM_IMG_URL = "https://files.catbox.moe/l5y0q6.jpg"
+SPOTIFY_PLAYLIST_IMG_URL = "https://files.catbox.moe/l5y0q6.jpg"
 
 
 def time_to_seconds(time):
