@@ -51,7 +51,6 @@ async def start_pm(client, message: Message, _):
                 reply_markup=keyboard,
                 has_spoiler=True  # ✅ SPOILER IMAGE
             )
-
     # normal /start reply
     keyboard = start_keyboard(_)
     await message.reply_photo(
@@ -60,7 +59,7 @@ async def start_pm(client, message: Message, _):
         reply_markup=keyboard,
         has_spoiler=True  # ✅ SPOILER IMAGE
     )
-          name[0:3] == "sud":
+        if name[0:3] == "sud":
             await sudoers_list(client=client, message=message, _=_)
             if await is_on_off(2):
                 return await app.send_message(
@@ -173,6 +172,7 @@ async def welcome(client, message: Message):
                 await message.stop_propagation()
         except Exception as ex:
             print(ex)
+
 
 
 
