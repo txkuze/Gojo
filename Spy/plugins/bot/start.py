@@ -43,30 +43,40 @@ async def start_pm(client, message: Message, _):
     if len(message.text.split()) > 1:
         name = message.text.split(None, 1)[1]
 
+        # help deep-link
         if name.startswith("help"):
             keyboard = first_page(_)
             return await message.reply_photo(
                 photo=config.START_IMG_URL,
                 caption=_["help_1"].format(config.SUPPORT_CHAT),
                 reply_markup=keyboard,
-                has_spoiler=True  # ✅ SPOILER IMAGE
+                has_spoiler=True
             )
+
+        # sudo list deep-link
+        if name.startswith("sud"):
+            await sudoers_list(client=client, message=message, _=_)
+
+            if await is_on_off(2):
+                await app.send_message(
+                    chat_id=config.LOGGER_ID,
+                    text=(
+                        f"{message.from_user.mention} ᴊᴜsᴛ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ʙᴏᴛ "
+                        f"ᴛᴏ ᴄʜᴇᴄᴋ <b>sᴜᴅᴏʟɪsᴛ</b>.\n\n"
+                        f"<b>ᴜsᴇʀ ɪᴅ :</b> <code>{message.from_user.id}</code>\n"
+                        f"<b>ᴜsᴇʀɴᴀᴍᴇ :</b> @{message.from_user.username}"
+                    ),
+                )
+            return
+
     # normal /start reply
     keyboard = start_keyboard(_)
     await message.reply_photo(
         photo=config.START_IMG_URL,
         caption=_["start_1"].format(message.from_user.mention),
         reply_markup=keyboard,
-        has_spoiler=True  # ✅ SPOILER IMAGE
+        has_spoiler=True
     )
-        if name[0:3] == "sud":
-            await sudoers_list(client=client, message=message, _=_)
-            if await is_on_off(2):
-                return await app.send_message(
-                    chat_id=config.LOGGER_ID,
-                    text=f"{message.from_user.mention} ᴊᴜsᴛ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ʙᴏᴛ ᴛᴏ ᴄʜᴇᴄᴋ <b>sᴜᴅᴏʟɪsᴛ</b>.\n\n<b>ᴜsᴇʀ ɪᴅ :</b> <code>{message.from_user.id}</code>\n<b>ᴜsᴇʀɴᴀᴍᴇ :</b> @{message.from_user.username}",
-                )
-            return
         if name[0:3] == "inf":
             m = await message.reply_text("🔎")
             query = (str(name)).replace("info_", "", 1)
@@ -172,6 +182,7 @@ async def welcome(client, message: Message):
                 await message.stop_propagation()
         except Exception as ex:
             print(ex)
+
 
 
 
